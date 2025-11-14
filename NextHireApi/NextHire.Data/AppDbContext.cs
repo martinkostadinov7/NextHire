@@ -15,7 +15,7 @@ namespace NextHire.Data
 
         }
         public AppDbContext(DbContextOptions<AppDbContext> options)
-    : base(options)
+         : base(options)
         {
         }
 
@@ -26,6 +26,7 @@ namespace NextHire.Data
             base.OnConfiguring(optionsBuilder);
         }
         public DbSet<User> Users { get; set; }
+        public DbSet<Company> Companies { get; set; }
     }
 
 }

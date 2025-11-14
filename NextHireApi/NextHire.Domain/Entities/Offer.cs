@@ -18,5 +18,19 @@ namespace NextHire.Domain.Entities
 
         public Company Company { get; set; }
 
+        public List<Application> Applications { get; set; } = new List<Application>();
+
+        private Offer()
+        {
+            
+        }
+
+        public Offer(string title, string description, int companyId, Company company)
+        {
+            Title = title;
+            Description = description;
+            CompanyId = companyId;
+            Company = company;
+        }
     }
 }

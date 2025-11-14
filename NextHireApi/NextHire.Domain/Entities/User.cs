@@ -18,6 +18,8 @@ namespace NextHire.Domain.Entities
 
         public string Phone { get; set; }
 
+        public List<Application> Applications { get; set; } = new List<Application>();
+
         private User()
         {
             

@@ -32,7 +32,7 @@ namespace NextHire.Data.Repositories
         {
             _context.Offers.Add(offer);
             await _context.SaveChangesAsync();
-            return Offer;
+            return offer;
         }
 
         public async Task<Offer> UpdateAsync(Offer offer)

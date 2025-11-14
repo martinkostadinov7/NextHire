@@ -7,7 +7,12 @@ using System.Threading.Tasks;
 
 namespace NextHire.Data.Abstraction
 {
-    public interface ICvRepository : IRepository<Cv>
+    public interface ICvRepository
     {
+        Task<Cv> GetByIdAsync(int id);
+        Task<IEnumerable<Cv>> GetAllAsync();
+        Task<Cv> AddAsync(Cv Cv);
+        Task<Cv> UpdateAsync(Cv Cv);
+        Task<bool> DeleteAsync(int id);
     }
 }

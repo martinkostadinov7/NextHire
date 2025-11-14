@@ -32,5 +32,28 @@ namespace NextHire.Domain.Entities
 
         public int OfferId { get; set; }
         public Offer Offer { get; set; }
+
+        private Application()
+        {
+            
+        }
+
+        public Application(string email, string firstName, string lastName, string phone, string education, 
+            string coverLetter, int cvId, Cv cv, int userId, User user, int offerId, Offer offer)
+        {
+            Email = email;
+            FirstName = firstName;
+            LastName = lastName;
+            Phone = phone;
+            Education = education;
+            CoverLetter = coverLetter;
+            CvId = cvId;
+            Cv = cv;
+            UserId = userId;
+            User = user;
+            OfferId = offerId;
+            Offer = offer;
+            SubmittedAt = DateTime.Now;
+        }
     }
 }

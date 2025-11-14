@@ -14,6 +14,8 @@ namespace NextHire.Domain.Entities
 
         public string Description { get; set; }
 
+        public List<Offer> Offers { get; set; } = new List<Offer>();
+
         private Company()
         {
             

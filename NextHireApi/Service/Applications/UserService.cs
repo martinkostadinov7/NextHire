@@ -1,6 +1,6 @@
 ﻿using Business.Entities;
 using Data.Abstraction;
-using NextHiteApi.Service.Abstraction;
+using NextHireApi.Service.Abstraction;
 using Shared.DTOs.Users;
 using System;
 using System.Collections.Generic;
@@ -69,17 +69,27 @@ namespace Service.Users
 
         public async Task<UserReadDto> UpdateUserAsync(int id, UserUpdateDto userDto)
         {
-            User user = new User(
-                userDto.Email, userDto.FirstName, userDto.LastName,
-                userDto.Phone);
+            User user = await userRepository.GetByIdAsync(id);
+
+            if (user == null)
+                throw new Exception("User not found");
+
+            user.Email = userDto.Email;
+            user.FirstName = userDto.FirstName;
+            user.LastName = userDto.LastName;
+            user.Phone = userDto.Phone;
 
             user = await userRepository.UpdateAsync(user);
 
-            UserReadDto userReadDto = new UserReadDto(user.Id,
-               user.Email, user.FirstName, user.LastName,
-               user.Phone, user.Applications);
-
-            return userReadDto;
+            return new UserReadDto(
+                user.Id,
+                user.Email,
+                user.FirstName,
+                user.LastName,
+                user.Phone,
+                user.Applications
+            );
         }
+
     }
 }

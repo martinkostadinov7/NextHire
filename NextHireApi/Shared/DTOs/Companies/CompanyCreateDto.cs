@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Business.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,10 @@ using System.Threading.Tasks;
 
 namespace Shared.DTOs.Companies
 {
-    internal class CompanyCreateDto
+    public class CompanyCreateDto
     {
+        public string Name { get; set; }
+
+        public string Description { get; set; }
     }
 }

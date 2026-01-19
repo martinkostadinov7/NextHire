@@ -5,12 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shared.DTOs.Companies
+namespace Shared.DTOs.Cvs
 {
-    public class CompanyUpdateDto
+    public class CvCreateDto
     {
-        public string Name { get; set; }
-
-        public string Description { get; set; }
+        public int UserId { get; set; }
     }
 }

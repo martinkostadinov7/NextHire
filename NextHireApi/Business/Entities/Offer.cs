@@ -25,12 +25,11 @@ namespace Business.Entities
             
         }
 
-        public Offer(string title, string description, int companyId, Company company)
+        public Offer(string title, string description, int companyId)
         {
             Title = title;
             Description = description;
             CompanyId = companyId;
-            Company = company;
         }
     }
 }

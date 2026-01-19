@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NextHiteApi.Service.Abstraction
+namespace NextHireApi.Service.Abstraction
 {
     public interface IApplicationService
     {

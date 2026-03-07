@@ -16,7 +16,7 @@ namespace NextHireApi.Service.Applications
             this.userRepository = userRepository;
         }
 
-        public async Task<ApplicationReadDto> CreateApplicationAsync(ApplicationCreateDto userDto, int senderId)
+        public async Task<ApplicationReadDto> CreateApplicationAsync(ApplicationCreateDto userDto)
         {
             Application user = new Application(
                 userDto.Email, userDto.FirstName, userDto.LastName, 

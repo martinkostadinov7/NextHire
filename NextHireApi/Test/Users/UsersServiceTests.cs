@@ -40,7 +40,7 @@ public class UserServiceTests
             .ReturnsAsync(savedUser);
 
         // Act
-        var result = await _service.CreateUserAsync(dto, senderId: 1);
+        var result = await _service.CreateUserAsync(dto);
 
         // Assert
         result.Should().NotBeNull();

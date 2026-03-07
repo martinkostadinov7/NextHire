@@ -19,7 +19,7 @@ namespace Service.Applications
             this.companyRepository = companyRepository;
         }
 
-        public async Task<CompanyReadDto> CreateCompanyAsync(CompanyCreateDto companyDto, int senderId)
+        public async Task<CompanyReadDto> CreateCompanyAsync(CompanyCreateDto companyDto)
         {
             Company company = new Company(
                 companyDto.Name, companyDto.Description);

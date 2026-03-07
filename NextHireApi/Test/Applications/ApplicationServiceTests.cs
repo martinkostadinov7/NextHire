@@ -40,7 +40,7 @@ public class ApplicationServiceTests
         )
         {
             Id = 1, // Задай конкретно Id
-            Cv = new Cv(dto.UserId),
+            Cv = new Cv("None", "None", "None", dto.UserId),
             User = new User("user@test.com", "Ivan", "Ivanov", "0888"),
             Offer = new Offer("Title", "Description", 1),
             SubmittedAt = DateTime.Now
@@ -51,7 +51,7 @@ public class ApplicationServiceTests
             .Setup(r => r.AddAsync(It.IsAny<Application>()))
             .ReturnsAsync(savedApplication);
 
-        var result = await _service.CreateApplicationAsync(dto, senderId: 1);
+        var result = await _service.CreateApplicationAsync(dto);
 
         result.Should().NotBeNull();
         result.Email.Should().Be(dto.Email);
@@ -69,7 +69,7 @@ public class ApplicationServiceTests
             1, 2, 3
         )
         {
-            Cv = new Cv(2),
+            Cv = new Cv("None", "None", "None", 2),
             User = new User("a@a.com", "Ivan", "Ivanov", "0888"),
             Offer = new Offer("Title", "Desc", 1)
         };
@@ -96,7 +96,7 @@ public class ApplicationServiceTests
                 1, 2, 3
             )
             {
-                Cv = new Cv(2),
+                Cv = new Cv("None", "None", "None", 2),
                 User = new User("a@a.com", "Ivan", "Ivanov", "0888"),
                 Offer = new Offer("Title", "Desc", 1)
             },
@@ -107,7 +107,7 @@ public class ApplicationServiceTests
                 1, 2, 3
             )
             {
-                Cv = new Cv(2),
+                Cv = new Cv("None", "None", "None", 2),
                 User = new User("a@a.com", "Ivan", "Ivanov", "0888"),
                 Offer = new Offer("Title", "Desc", 1)
             }
@@ -132,7 +132,7 @@ public class ApplicationServiceTests
             1, 2, 3
         )
         {
-            Cv = new Cv(2),
+            Cv = new Cv("None", "None", "None", 2),
             User = new User("a@a.com", "Ivan", "Ivanov", "0888"),
             Offer = new Offer("Title", "Desc", 1)
         };

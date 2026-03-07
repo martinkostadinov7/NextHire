@@ -9,7 +9,7 @@ namespace Service.Abstraction
 {
     public interface IOfferService
     {
-        Task<OfferReadDto> CreateOfferAsync(OfferCreateDto offerDto, int senderId);
+        Task<OfferReadDto> CreateOfferAsync(OfferCreateDto offerDto);
         Task<OfferReadDto> UpdateOfferAsync(int id, OfferUpdateDto offerDto);
         Task DeleteOfferAsync(int id);
         Task<List<OfferReadDto>> GetAllOffers();

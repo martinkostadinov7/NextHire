@@ -19,7 +19,7 @@ namespace Service.Users
             this.userRepository = userRepository;
         }
 
-        public async Task<UserReadDto> CreateUserAsync(UserCreateDto userDto, int senderId)
+        public async Task<UserReadDto> CreateUserAsync(UserCreateDto userDto)
         {
             User user = new User(
                 userDto.Email, userDto.FirstName, userDto.LastName,

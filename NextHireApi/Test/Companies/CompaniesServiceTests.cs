@@ -38,7 +38,7 @@ public class CompanyServiceTests
             .ReturnsAsync(savedCompany);
 
         // Act
-        var result = await _service.CreateCompanyAsync(dto, senderId: 1);
+        var result = await _service.CreateCompanyAsync(dto);
 
         // Assert
         result.Should().NotBeNull();

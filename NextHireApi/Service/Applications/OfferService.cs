@@ -19,7 +19,7 @@ namespace Service.Applications
             this.offerRepository = offerRepository;
         }
 
-        public async Task<OfferReadDto> CreateOfferAsync(OfferCreateDto offerDto, int senderId)
+        public async Task<OfferReadDto> CreateOfferAsync(OfferCreateDto offerDto)
         {
             Offer offer = new Offer(
                 offerDto.Title, offerDto.Description, offerDto.CompanyId);

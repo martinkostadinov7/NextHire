@@ -9,7 +9,14 @@ namespace Shared.DTOs.Cvs
 {
     public class CvReadDto
     {
+
         public int Id { get; set; }
+
+        public string Summary { get; set; }
+
+        public string Experience { get; set; }
+
+        public string Skills { get; set; }
 
         public User User { get; set; }
 

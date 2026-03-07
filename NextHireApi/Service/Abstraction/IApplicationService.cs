@@ -9,7 +9,7 @@ namespace NextHireApi.Service.Abstraction
 {
     public interface IApplicationService
     {
-        Task<ApplicationReadDto> CreateApplicationAsync(ApplicationCreateDto userDto, int senderId);
+        Task<ApplicationReadDto> CreateApplicationAsync(ApplicationCreateDto userDto);
         Task<ApplicationReadDto> UpdateApplicationAsync(int id, ApplicationUpdateDto userDto);
         Task DeleteApplicationAsync(int id);
         Task<List<ApplicationReadDto>> GetAllApplications();

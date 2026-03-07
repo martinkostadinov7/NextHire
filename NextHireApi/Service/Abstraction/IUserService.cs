@@ -10,7 +10,7 @@ namespace NextHireApi.Service.Abstraction
 {
     public interface IUserService
     {
-        Task<UserReadDto> CreateUserAsync(UserCreateDto userDto, int senderId);
+        Task<UserReadDto> CreateUserAsync(UserCreateDto userDto);
         Task<UserReadDto> UpdateUserAsync(int id, UserUpdateDto userDto);
         Task DeleteUserAsync(int id);
         Task<List<UserReadDto>> GetAllUsers();

@@ -19,9 +19,9 @@ namespace Service.Applications
             this.cvRepository = cvRepository;
         }
 
-        public async Task<CvReadDto> CreateCvAsync(CvCreateDto cvDto, int senderId)
+        public async Task<CvReadDto> CreateCvAsync(CvCreateDto cvDto)
         {
-            Cv cv = new Cv(cvDto.UserId);
+            Cv cv = new Cv(cvDto.Summary, cvDto.Experience, cvDto.Skills, cvDto.UserId);
 
             cv = await cvRepository.AddAsync(cv);
 

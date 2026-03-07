@@ -40,7 +40,7 @@ public class OfferServiceTests
             .ReturnsAsync(savedOffer);
 
         // Act
-        var result = await _service.CreateOfferAsync(dto, senderId: 1);
+        var result = await _service.CreateOfferAsync(dto);
 
         // Assert
         result.Should().NotBeNull();

@@ -22,7 +22,7 @@ public class CvServiceTests
     {
         // Arrange
         var dto = new CvCreateDto { UserId = 5 };
-        var savedCv = new Cv(dto.UserId)
+        var savedCv = new Cv("None", "None", "None", dto.UserId)
         {
             Id = 1,
             User = new User("test@test.com", "Ivan", "Ivanov", "0888")
@@ -33,7 +33,7 @@ public class CvServiceTests
             .ReturnsAsync(savedCv);
 
         // Act
-        var result = await _service.CreateCvAsync(dto, senderId: 5);
+        var result = await _service.CreateCvAsync(dto);
 
         // Assert
         result.Should().NotBeNull();
@@ -45,7 +45,7 @@ public class CvServiceTests
     public async Task GetCvById_ShouldReturnCv()
     {
         // Arrange
-        var cv = new Cv(2)
+        var cv = new Cv("None", "None", "None", 2)
         {
             Id = 10,
             User = new User("a@a.com", "User", "Test", "123")
@@ -69,8 +69,8 @@ public class CvServiceTests
         // Arrange
         var cvs = new List<Cv>
         {
-            new Cv(1) { Id = 1, User = new User("u1@t.com", "N1", "L1", "1") },
-            new Cv(2) { Id = 2, User = new User("u2@t.com", "N2", "L2", "2") }
+            new Cv("None", "None", "None", 1) { Id = 1, User = new User("u1@t.com", "N1", "L1", "1") },
+            new Cv("None", "None", "None", 2) { Id = 2, User = new User("u2@t.com", "N2", "L2", "2") }
         };
 
         _cvRepositoryMock
@@ -88,7 +88,7 @@ public class CvServiceTests
     public async Task UpdateCvAsync_ShouldUpdateExistingCv()
     {
         // Arrange
-        var existing = new Cv(1)
+        var existing = new Cv("None", "None", "None", 1)
         {
             Id = 1,
             User = new User("old@test.com", "Old", "User", "111")

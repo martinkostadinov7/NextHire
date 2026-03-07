@@ -9,7 +9,7 @@ namespace Service.Abstraction
 {
     public interface ICompanyService
     {
-        Task<CompanyReadDto> CreateCompanyAsync(CompanyCreateDto companyDto, int senderId);
+        Task<CompanyReadDto> CreateCompanyAsync(CompanyCreateDto companyDto);
         Task<CompanyReadDto> UpdateCompanyAsync(int id, CompanyUpdateDto companyDto);
         Task DeleteCompanyAsync(int id);
         Task<List<CompanyReadDto>> GetAllCompanys();

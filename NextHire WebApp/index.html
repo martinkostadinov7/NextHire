@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Management Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <h2>Dashboard</h2>
+            <nav id="nav-menu">
+                <button class="nav-btn active" data-entity="Users">Users</button>
+                <button class="nav-btn" data-entity="Companies">Companies</button>
+                <button class="nav-btn" data-entity="Offers">Offers</button>
+                <button class="nav-btn" data-entity="Cvs">CVs</button>
+                <button class="nav-btn" data-entity="Applications">Applications</button>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header>
+                <h1 id="entity-title">Users</h1>
+                <button id="add-btn" class="primary-btn">+ Add New</button>
+            </header>
+
+            <div class="table-container">
+                <table id="data-table">
+                    <thead id="table-head">
+                        </thead>
+                    <tbody id="table-body">
+                        </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <div id="form-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Add User</h2>
+                <span id="close-modal" class="close">&times;</span>
+            </div>
+            <form id="entity-form">
+                <input type="hidden" id="entity-id">
+                <div id="form-fields">
+                    </div>
+                <div class="form-actions">
+                    <button type="submit" class="primary-btn">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
